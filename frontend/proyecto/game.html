@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retro Runner</title>
+    <link rel="stylesheet" href="game.css">
+</head>
+<body>
+    <div id="game-container">
+        <div id="start-screen" class="retro-screen active">
+            <h1>RETRO RUNNER</h1>
+            <p>¡Escribe tu nombre y prepárate para jugar!</p>
+            <input type="text" id="playerNameInput" placeholder="Ingresa tu nombre">
+            <button id="startButton" class="retro-btn">Comenzar</button>
+        </div>
+
+        <div id="game-play" class="retro-screen">
+            <div id="game-stats">
+                <p>Puntuación: <span id="currentScore">0</span></p>
+                <p>Nivel: <span id="currentLevel">1</span></p>
+            </div>
+            <canvas id="gameCanvas" width="800" height="400"></canvas>
+        </div>
+
+        <div id="end-screen" class="retro-screen">
+            <div class="game-over-modal">
+                <h1>GAME OVER</h1>
+                <p>Puntuación final: <span id="finalScore">0</span></p>
+                <p>Nivel alcanzado: <span id="finalLevel">1</span></p>
+                <div class="modal-buttons">
+                    <button id="restartButton" class="retro-btn">Volver a Jugar</button>
+                    <button id="changeNameButton" class="retro-btn">Cambiar nombre y Jugar</button>
+                </div>
+            </div>
+            
+            <h2>Leaderboard</h2>
+            <table class="retro-table" id="leaderboard">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Jugador</th>
+                        <th>Puntuación</th>
+                        <th>Nivel</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>

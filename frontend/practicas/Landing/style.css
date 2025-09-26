@@ -1,0 +1,120 @@
+
+/* =========================
+   Estilos generales
+   ========================= */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-image: url('fondo.jpeg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+/* Caja general del login */
+.box {
+  background-color: rgba(255, 255, 255, 0.452);
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  width: 300px;
+}
+
+/* =========================
+   Header del login
+   ========================= */
+.top-header {
+  text-align: center;
+  margin-bottom: 30px;
+  padding-bottom: 10px;       /* padding interno del header */
+  border-bottom: 1px solid #fff9f965; /* separador opcional */
+}
+
+.top-header span {
+  display: block;
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 5px;
+}
+
+.top-header header {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* =========================
+   Inputs y botones
+   ========================= */
+.input-field {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.input-field span {
+  font-size: 14px;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.input-field .input {
+  padding: 10px 15px;
+  font-size: 16px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  outline: none;
+  transition: 0.3s;
+}
+
+.input-field .input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0,123,255,0.5);
+}
+
+/* Botón de inicio de sesión */
+.input-field .submit {
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.input-field .submit:hover {
+  background-color: #0056b3;
+}
+
+/* =========================
+   Checkbox recordar
+   ========================= */
+.bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.bottom .left input[type="checkbox"] {
+  margin-right: 5px;
+  width: 16px;
+  height: 16px;
+  border-radius: 4px; /* redondeado */
+  accent-color: #007bff; /* color del check */
+}
+
+.bottom .rigth a {
+  text-decoration: none;
+  font-size: 14px;
+  color: #007bff;
+}
+
+.bottom .rigth a:hover {
+  text-decoration: underline;
+}

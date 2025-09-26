@@ -1,0 +1,206 @@
+body {
+    /* Degradado radial que crea un resplandor en el centro */
+    background: radial-gradient(circle at center, #270d42 0%, #0c145b 50%, #3d0d57 100%);
+    color: #00ff00;
+    font-family: 'Courier New', Courier, monospace;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    text-align: center;
+}
+/* Contenedor principal con efecto glow */
+#game-container {
+    border: 4px solid #f200ff;
+    box-shadow: 0 0 25px #6f00ff, inset 0 0 15px #d000ff;
+    padding: 20px;
+    background-color: #111;
+    position: relative;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+
+/* Pantallas retro */
+.retro-screen {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+    width: 800px;
+}
+
+/* Solo la pantalla activa se muestra */
+.retro-screen.active {
+    display: flex;
+}
+
+/* Corrección: la pantalla de juego debe ser de tipo block para que el canvas se muestre correctamente */
+#game-play.active {
+    display: block;
+}
+
+
+/* Títulos retro con parpadeo */
+h1 {
+    font-size: 3em;
+    text-shadow: 0 0 15px #9900fff8, 0 0 30px #cc00ff;
+    animation: blink 1.5s infinite alternate;
+    margin-bottom: 10px;
+}
+
+/* Texto */
+p {
+    font-size: 1.2em;
+    text-shadow: 0 0 10px #09c5ea;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+/* Botones retro */
+.retro-btn {
+    background: transparent;
+    color: #7b00ff;
+    border: 2px solid #8c00ff;
+    padding: 8px 20px;
+    font-size: 1em;
+    font-family: 'Courier New', Courier, monospace;
+    cursor: pointer;
+    text-shadow: 0 0 8px #00ff00;
+    box-shadow: 0 0 15px #aa00ff;
+    transition: all 0.2s;
+    margin-top: 10px;
+    border-radius: 6px;
+}
+
+.retro-btn:hover {
+    background-color: #b300ff;
+    color: #000;
+    box-shadow: 0 0 25px #bf00ff;
+    transform: scale(1.05);
+}
+
+/* Canvas retro */
+canvas {
+    background-color: #111;
+    display: block;
+    border: 2px solid #c800ff;
+    box-shadow: 0 0 15px #ff00ea;
+}
+
+/* Input jugador */
+#playerNameInput {
+    background: transparent;
+    border: 2px solid #8400ff;
+    color: #d900ff;
+    font-family: 'Courier New', Courier, monospace;
+    padding: 8px;
+    margin-top: 10px;
+    text-align: center;
+    width: 200px;
+    box-shadow: 0 0 10px #9900ff;
+}
+
+#playerNameInput:focus {
+    outline: none;
+    box-shadow: 0 0 20px #dd00ff;
+}
+
+/* Stats en pantalla */
+#game-stats {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 1em;
+    text-align: left;
+    text-shadow: 0 0 5px #ff1500;
+}
+#game-stats p {
+    margin: 0;
+}
+
+/* Tabla de clasificación */
+.retro-table {
+    width: 90%;
+    max-width: 600px;
+    border-collapse: collapse;
+    margin: 20px auto;
+    border: 2px solid #ff9d00;
+    box-shadow: 0 0 20px #ffe100;
+    font-size: 1em;
+}
+
+.retro-table th, .retro-table td {
+    border: 1px solid #c3ff00;
+    padding: 12px;
+    text-align: center;
+}
+
+.retro-table th {
+    background-color: #ff4d00;
+    color: #000;
+    text-shadow: none;
+}
+
+.retro-table tbody tr {
+    background-color: #0a0a0a;
+    transition: background-color 0.3s;
+}
+.retro-table tbody tr:hover {
+    background-color: #222;
+}
+
+/* Animaciones */
+@keyframes blink {
+    50% {
+        opacity: 0.4;
+    }
+}
+
+@keyframes neon-glow {
+    0%, 100% {
+        text-shadow: 0 0 10px #ffa200, 0 0 20px #ffaa00;
+    }
+    50% {
+        text-shadow: 0 0 20px #fffb00, 0 0 40px #ff4d00;
+    }
+}
+
+/* Estilos para el modal de Game Over */
+#end-screen.active {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent; 
+    position: relative;
+    width: 100%;
+    height: 100%;
+    justify-content: flex-start;
+    padding-top: 50px;
+    gap: 20px;
+}
+
+.game-over-modal {
+    background-color: #111;
+    border: 4px solid #9900ff;
+    box-shadow: 0 0 25px #e100ff, inset 0 0 15px #aa00ff;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    z-index: 20;
+    width: 80%;
+    max-width: 450px;
+}
+
+.modal-buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    margin-top: 20px;
+}

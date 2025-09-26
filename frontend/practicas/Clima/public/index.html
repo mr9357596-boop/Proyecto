@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App del Clima</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Contenedor principal -->
+    <div class="container">
+        <h1 class="title">🌤️ Clima Actual</h1>
+        
+        <!-- Buscador de ciudad (opcional) -->
+        <div class="search-container">
+            <input type="text" id="cityInput" placeholder="Buscar ciudad..." class="city-input">
+            <button id="searchBtn" class="search-btn">Buscar</button>
+        </div>
+        
+        <!-- Spinner de carga -->
+        <div id="loader" class="loader hidden">
+            <div class="spinner"></div>
+            <p>Obteniendo datos del clima...</p>
+        </div>
+        
+        <!-- Tarjeta del clima -->
+        <div id="weatherCard" class="weather-card hidden">
+            <div class="location">
+                <h2 id="cityName" class="city-name"></h2>
+                <p id="country" class="country"></p>
+            </div>
+            
+            <div class="weather-main">
+                <div class="weather-icon-container">
+                    <img id="weatherIcon" class="weather-icon" src="" alt="Icono del clima">
+                </div>
+                <div class="temperature">
+                    <span id="temp" class="temp-value"></span>
+                    <span class="temp-unit">°C</span>
+                </div>
+            </div>
+            
+            <p id="description" class="weather-description"></p>
+            
+            <div class="weather-details">
+                <div class="detail-item">
+                    <span class="detail-icon">🌡️</span>
+                    <div class="detail-info">
+                        <p class="detail-label">Sensación</p>
+                        <p id="feelsLike" class="detail-value"></p>
+                    </div>
+                </div>
+                
+                <div class="detail-item">
+                    <span class="detail-icon">💧</span>
+                    <div class="detail-info">
+                        <p class="detail-label">Humedad</p>
+                        <p id="humidity" class="detail-value"></p>
+                    </div>
+                </div>
+                
+                <div class="detail-item">
+                    <span class="detail-icon">💨</span>
+                    <div class="detail-info">
+                        <p class="detail-label">Viento</p>
+                        <p id="wind" class="detail-value"></p>
+                    </div>
+                </div>
+            </div>
+            
+            <button id="refreshBtn" class="refresh-btn">Actualizar</button>
+        </div>
+        
+        <!-- Mensaje de error -->
+        <div id="errorMessage" class="error-message hidden">
+            <p id="errorText"></p>
+        </div>
+    </div>
+    
+    <!-- Contenedor para efectos de clima (lluvia, nieve) -->
+    <div id="weatherEffects" class="weather-effects"></div>
+    
+    <script src="app.js"></script>
+</body>
+</html>
